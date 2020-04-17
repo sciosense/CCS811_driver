@@ -1,32 +1,22 @@
-# CCS811
+# ScioSense CCS811
 Arduino library for the CCS811 digital gas sensor for monitoring indoor air quality from ScioSense.
-
+It is based on a library written by Maarten Pennings. Thanks for all the work. 
 
 ## Introduction
-This project is an Arduino *library*. It implements a driver for the CCS811.
-This chip is a indoor air quality sensor module with an I2C interface.
+This project is an Arduino *library*. It implements a driver for the CCS811. This chip is a indoor air quality sensor module with an I2C interface.
 
 This library includes a CCS811 driver and some [examples](examples).
 When starting, use the example [ccs811basic](examples/ccs811basic).
 It is the most simple one, but it helps in getting the wiring correct: the I2C wires, the ADDR select pin and the nWAKE pin.
 There is also a full fledged example: it reads environmental data from ENS210, writes that to the CCS811, 
-reads the gas data from the CCS811, and then uploads that to ThingSpeak.
-
-If you have an old CCS811, you might want to update its firmware. 
-This library contains an example for that too: [ccs811flash](examples/ccs811flash).
+reads the gas data from the CCS811.
 
 The rest of this page tells how to get started on the software (install library) and hardware (wiring).
 
-
 ## Links
 The CCS811 is made by [ScioSense](https://www.sciosense.com). 
- - Find the datasheet of the CCS811 on the
-   [product page](https://sciosense.com/ccs811).
- - Find application notes and software on the
-   [Technical Documents](http://sciosense.com/ccs811#tab/documents) tab.
- - Find the latest in-chip firmware on the
-   [Tools & Support](http://sciosense.com/ccs811#tab/tools) tab: CCS811_SW000246_x-xx.bin.
-
+ - The datasheet and further documents regading the ENS210 can be downloaded here
+   https://www.sciosense.com/products/environmental-sensors/ccs811-gas-sensor-solution/
 
 ## Software
 This section gives a quick overview of how to install this library and compile one of its 
@@ -38,8 +28,7 @@ It is assumed that
    If not, refer to "Install the Arduino Desktop IDE" on the
    [Arduino site](https://www.arduino.cc/en/Guide/HomePage).
  - The Arduino library directory is at its default location.
-   For me, Maarten, that is `C:\Users\maarten\Documents\Arduino\libraries`.
-
+   For me, that is `C:\Users\sciosense\Documents\Arduino\libraries`.
 
 ### Installation
 Installation steps
@@ -49,8 +38,7 @@ Installation steps
  - In Arduino IDE, select Sketch > Include Library > Manage Libraries ...
    and browse to the just downloaded ZIP file.
  - When the IDE is ready this `README.md` should be located at e.g.
-   `C:\Users\maarten\Documents\Arduino\libraries\CCS811\README.md`.
-
+   `C:\Users\sciosense\Documents\Arduino\libraries\sciosense_ccs811\README.md`.
 
 ### Build an example
 To build an example sketch (just building, for running it we need to wire it, and that is the next step):
@@ -58,7 +46,6 @@ To build an example sketch (just building, for running it we need to wire it, an
  - Open File > Example > Examples from Custom Libraries > CCS811 > ccs811basic.
  - Make sure Tools > Board lists the correct board.
  - Select Sketch > Verify/Compile.
-
 
 ## Hardware
 This library has been tested with
@@ -219,8 +206,5 @@ To build, flash and run an example sketch
      ```
  - It is normal that early measurements do not provide data yet; the internal gas library needs some data points to startup.
 
- - At the time of writing this application, `application version: 2000` is available on the sciosense.com website.
-   You might still have version 1100. To flash version 2000, you need the [CCS811 eval kit](https://sciosense.com/ccs811evalkit).
-   As an alternative, you could try my [flash example](examples/ccs811flash) - on your own risk.
- 
+ ## ScioSense is a Joint Venture of ams AG
 (end of doc)

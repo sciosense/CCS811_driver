@@ -1,3 +1,6 @@
+## THIS LIBARARY IS A COPY OF [github.com/maarten-pennings/ccs811](https://github.com/maarten-pennings/CCS811/tree/master/examples/ccs811flash)
+
+
 # ScioSense CCS811
 Arduino library for the CCS811 digital gas sensor for monitoring indoor air quality from ScioSense.
 It is based on a library written by Maarten Pennings. Thanks for all the work. 
